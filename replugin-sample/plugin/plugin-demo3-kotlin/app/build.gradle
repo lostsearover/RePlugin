@@ -52,9 +52,17 @@ android {
     }
 }
 
+// Add for porting aar from lib @{
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+// @}
 
 dependencies {
-    compile 'com.qihoo360.replugin:replugin-plugin-lib:2.2.2'
+//    compile 'com.qihoo360.replugin:replugin-plugin-lib:2.2.2'
+    compile(name:'replugin-plugin-lib-2.2.2', ext:'aar')
     provided files('libs/fragment.jar')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     //这个jar就是从Support-fragment中提取出来的并非特制包目的是为了骗过编译期

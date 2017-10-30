@@ -55,6 +55,14 @@ android {
     }
 }
 
+// Add for porting aar from lib @{
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+// @}
+
 // 这个plugin需要放在android配置之后，因为需要读取android中的配置项
 apply plugin: 'replugin-plugin-gradle'
 repluginPluginConfig {
@@ -66,7 +74,9 @@ repluginPluginConfig {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.qihoo360.replugin:replugin-plugin-lib:2.2.2'
+    //　注释掉以下
+//    compile 'com.qihoo360.replugin:replugin-plugin-lib:2.2.2'
+    compile(name:'replugin-plugin-lib-2.2.2', ext:'aar')
 }
 
 if (android.defaultConfig.multiDexEnabled) {

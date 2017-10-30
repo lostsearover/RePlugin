@@ -15,11 +15,17 @@
  */
 buildscript {
     repositories {
+        // 引用本地
+        maven {
+            url "file:../replugin_local"
+        }
         mavenLocal()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
+        // 添加以下
+        classpath 'javassist:javassist:3.12.1.GA'
         classpath 'com.qihoo360.replugin:replugin-plugin-gradle:2.2.2'
     }
 }
