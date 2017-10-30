@@ -41,7 +41,8 @@ android {
     }
 
     // 务必要加上此段话，这样默认会出Debug版AAR，会带上日志方便定位
-    defaultPublishConfig "debug"
+    //　编译release版本，关闭log
+    //defaultPublishConfig "debug"
 }
 
 dependencies {
